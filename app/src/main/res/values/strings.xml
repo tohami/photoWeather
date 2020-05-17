@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="oops_unknown_error">Oops unknown error</string>
+    <string name="something_went_wrong">Something went wrong, Please try again later</string>
+    <string name="no_results_found">No results found</string>
+    <string name="no_internet_connection">You are offline, Try again after connecting</string>
+    <string name="offline">Offline</string>
+    <string name="offline_data">Offline data</string>
+    <string name="not_authorized">Not authorized</string>
+    <string name="not_authorized_subtitle">You don\'t have permission to view this page</string>
+
+    <string name="app_name">Weather Photo</string>
+    <string name="msg_permission_required">Permission is required for core functionality, Please enabled it from settings.</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="permission_dialog_title">Permission required</string>
+
+</resources>

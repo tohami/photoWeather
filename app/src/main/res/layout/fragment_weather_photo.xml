@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveAndContinueBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Save And Continue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- Another viewGroup to be able to generate bitmap from       -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weatherPhotoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/saveAndContinueBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/weatherPhotoIv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weatherDataContainer"
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/locationNameTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Fifth Settlement, Cairo" />
+
+            <TextView
+                android:id="@+id/dateTimeTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/locationNameTv"
+                app:layout_constraintTop_toBottomOf="@id/locationNameTv"
+                tools:text="Fifth Settlement, Cairo" />
+
+            <TextView
+                android:id="@+id/tempStatusTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/locationNameTv"
+                app:layout_constraintTop_toBottomOf="@id/dateTimeTv"
+                tools:text="Fifth Settlement" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tempStatusIv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="@+id/locationNameTv"
+                app:layout_constraintTop_toBottomOf="@+id/tempStatusTv" />
+
+            <TextView
+                android:id="@+id/currentTempTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tempStatusIv"
+                app:layout_constraintStart_toEndOf="@+id/tempStatusIv"
+                app:layout_constraintTop_toTopOf="@+id/tempStatusIv"
+                tools:text="17" />
+
+            <TextView
+                android:id="@+id/currentTempUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/currentTempTv"
+                app:layout_constraintTop_toTopOf="@+id/currentTempTv"
+                tools:text="C" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/view_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        layout="@layout/view_error_layout"
+        android:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

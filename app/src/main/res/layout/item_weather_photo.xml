@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weatherDataContainer"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/weatherPhotoIv"
+            android:layout_width="140dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/locationNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:lines="1"
+            app:layout_constraintEnd_toStartOf="@id/weatherPhotoIv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Fifth Settlement, Cairo" />
+
+        <TextView
+            android:id="@+id/dateTimeTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/weatherPhotoIv"
+            app:layout_constraintStart_toStartOf="@id/locationNameTv"
+            app:layout_constraintTop_toBottomOf="@id/locationNameTv"
+            tools:text="Fifth Settlement, Cairo" />
+
+
+        <TextView
+            android:id="@+id/currentTempTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="48sp"
+            app:layout_constraintTop_toBottomOf="@+id/dateTimeTv"
+            app:layout_constraintStart_toStartOf="@+id/dateTimeTv"
+            tools:text="17" />
+
+        <TextView
+            android:id="@+id/currentTempUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/currentTempTv"
+            app:layout_constraintTop_toTopOf="@+id/currentTempTv"
+            tools:text="C" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
